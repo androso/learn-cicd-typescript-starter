@@ -18,12 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Get Node js version
-        run: node --version 
-  secondJob: 
-    name: secondTest
-    runs-on: ubuntu-latest
+      - name: Install clean dependencies
+        run: npm ci
 
-    steps:
-      - name: Check out code 
-        uses: actions/checkout@v4  
+      - name: Run all tests
+        run:  npm run test
