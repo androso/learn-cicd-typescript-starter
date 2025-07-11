@@ -8,17 +8,17 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
-  steps:
-    - name: Check out code
-      uses: actions/checkout@v4
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
 
-    - name: set up node environment
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22
-      
-    - name: Install dependencies
-      run: npm ci
+      - name: set up node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+        
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Build the app
-      run: npm run build
+      - name: Build the app
+        run: npm run build
